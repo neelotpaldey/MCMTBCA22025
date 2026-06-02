@@ -43,16 +43,17 @@ if selected_name != "Select Name":
     })
 
     # Replace blanks and NaN with "Result Soon"
-    sessional = sessional.fillna("Result Soon")
+    sessional = sessional.fillna("Comming Soon")
     put = put.fillna("Result Soon")
 
-    sessional = sessional.replace("", "Result Soon")
+    sessional = sessional.replace("", "Comming Soon")
     put = put.replace("", "Result Soon")
 
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("Sessional Marks (Out of 25)")
+        st.subheader("Sessional Marks")
+        st.subheader("(Out of 25)")
         st.dataframe(
             sessional,
             hide_index=True,
@@ -60,7 +61,8 @@ if selected_name != "Select Name":
         )
 
     with col2:
-        st.subheader("PUT Marks (Out of 75)")
+        st.subheader("PUT Marks")
+        st.subheader("(Out of 75)")
         st.dataframe(
             put,
             hide_index=True,
